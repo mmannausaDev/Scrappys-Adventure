@@ -10,20 +10,22 @@ public class ScrapGame : MonoBehaviour
     [SerializeField] Rigidbody2D hook;
     [SerializeField] int hookSpeed;
 
+    [SerializeField] private GameObject scrapMetal;
+    [SerializeField] private GameObject shipPart;
+    [SerializeField] private GameObject pitfall;
+
     //might not be needed 
     [SerializeField] private Vector2 minGameBoundry;
     [SerializeField] private Vector2 maxGameBoundry;
     [SerializeField] GameObject lastSpawnedScreen; 
     [SerializeField] private Transform spawnLocation;
-    [SerializeField] private List<GameObject> gameObjectsToSpawn = new List<GameObject>();
+    private int spawnedScreens = 0;
+    
+
     [SerializeField] private GameObject nextScreen;
 
     private void Start()
     {
-        SpawnObject();
-        SpawnObject();
-        SpawnObject();
-        SpawnObject();
 
         SpawnScreen(); 
     }
@@ -41,25 +43,55 @@ public class ScrapGame : MonoBehaviour
         //hook.position = Vector3.MoveTowards(hook.position, tempHookPos,  hookSpeed * Time.deltaTime);
         hook.MovePosition(hook.position + new Vector2(tempHookPos.x - hook.position.x, tempHookPos.y - hook.position.y) * hookSpeed * Time.deltaTime);
         //hook.position = tempHookPos; 
-        Debug.Log(lastSpawnedScreen.transform.position.y); 
-        if(lastSpawnedScreen.transform.position.y >= 0)
+
+
+
+    }
+
+
+    private void FixedUpdate()
+    {
+        if (lastSpawnedScreen.transform.position.y >= -.4)
         {
-            SpawnScreen(); 
+            SpawnScreen();
         }
-
-
     }
 
     private void SpawnScreen()
     {
+        spawnedScreens++; 
         lastSpawnedScreen = Instantiate(nextScreen, new Vector3( spawnLocation.position.x, spawnLocation.position.y, 9), Quaternion.identity, gameObject.transform);
+
+        int numOfScaapMetal = Random.Range(2, 5);
+        for (int i = 0; i < numOfScaapMetal; i++)
+        {
+            SpawnObject(scrapMetal); 
+        }
+
+        if (spawnedScreens > 2)
+        {
+            int numOfPitfalls = Random.Range(0, 4);
+            for (int i = 0; i < numOfPitfalls; i++)
+            {
+                SpawnObject(pitfall);
+            }
+        }
+
+
+        if (spawnedScreens > 10) {
+            SpawnObject(shipPart);
+        }
+
+
+
     }
 
-    private void SpawnObject()
+    private void SpawnObject(GameObject gameObject)
     {
-        Instantiate(gameObjectsToSpawn[0], 
+        Instantiate(gameObject, 
             new Vector2( spawnLocation.position.x + Random.Range(-3, 3), spawnLocation.position.y + Random.Range(-5, 5)), 
             Quaternion.identity);
+
     }
 
 

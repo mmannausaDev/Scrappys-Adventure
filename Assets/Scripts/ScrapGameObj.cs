@@ -7,11 +7,9 @@ public class ScrapGameObj : MonoBehaviour
     [SerializeField] private int currentSpeed = 2;
     private int fastSpeed = 8; 
     private int slowSpeed = 2;
+    private ScrapGame scrapGame;
 
 
-
-
-    // Update is called once per frame
     void Update()
     {
 
@@ -25,15 +23,23 @@ public class ScrapGameObj : MonoBehaviour
         {
             currentSpeed = slowSpeed;
         }
-        transform.Translate(Vector3.up * currentSpeed * Time.deltaTime);
 
+    }
+
+    private void FixedUpdate()
+    {
+        transform.Translate(Vector3.up * currentSpeed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("picked up item"); 
+        //Debug.Log("picked up item"); 
         //do something with the item picked up
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
 
+    }
+
+    public void setScrapGame(ScrapGame scrapGame) { 
+        this.scrapGame = scrapGame; 
     }
 }
