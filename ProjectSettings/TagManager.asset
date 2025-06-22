@@ -7,6 +7,9 @@ TagManager:
   - ScrapMetal
   - ShipPart
   - PitFall
+  - Hitsound
+  - GM
+  - Enemy
   layers:
   - Default
   - TransparentFX
