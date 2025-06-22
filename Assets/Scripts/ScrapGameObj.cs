@@ -7,16 +7,16 @@ public class ScrapGameObj : MonoBehaviour
     [SerializeField] private int currentSpeed = 2;
     private int fastSpeed = 8; 
     private int slowSpeed = 2;
-    private ScrapGame scrapGame;
 
+    [SerializeField] private int yPostoDelete;
 
     void Update()
     {
 
-        if (UnityEngine.Input.GetMouseButtonDown(0))
+        if (UnityEngine.Input.GetMouseButton(0))
         {
             currentSpeed = fastSpeed;
-            Debug.Log("going faster"); 
+            //Debug.Log("going faster"); 
 
         }
         if (UnityEngine.Input.GetMouseButtonUp(0))
@@ -24,6 +24,11 @@ public class ScrapGameObj : MonoBehaviour
             currentSpeed = slowSpeed;
         }
 
+        if(transform.position.y >= yPostoDelete)
+        {
+            Destroy(gameObject);
+            //Debug.Log(transform.position.y); 
+        }
     }
 
     private void FixedUpdate()
@@ -39,7 +44,4 @@ public class ScrapGameObj : MonoBehaviour
 
     }
 
-    public void setScrapGame(ScrapGame scrapGame) { 
-        this.scrapGame = scrapGame; 
-    }
 }

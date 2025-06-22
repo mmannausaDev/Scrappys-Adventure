@@ -15,9 +15,15 @@ public class ClickableTownObj : MonoBehaviour
         {
             cameraTransform.position = newCameraPos;
             correspondingScreen.SetActive(true);
+            switchToScreen();
         }
     }
 
+
+    public virtual void switchToScreen() {
+
+    }
+        
 
 
     void OnMouseOver()
