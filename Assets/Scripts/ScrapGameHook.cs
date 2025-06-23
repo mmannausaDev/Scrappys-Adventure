@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class ScrapGameHook : MonoBehaviour
@@ -7,7 +8,20 @@ public class ScrapGameHook : MonoBehaviour
     private int scrapMetalCollected = 0;
     private int shipPartsCollected = 0;
     private int pitFallsCollected = 0;
-    [SerializeField] private int numOfItemsToEndGame; 
+
+    [SerializeField] private TextMeshProUGUI scrapText;
+    [SerializeField] private TextMeshProUGUI shipText;
+    [SerializeField] private TextMeshProUGUI pitfallText;
+
+    [SerializeField] private int numOfItemsToEndGame;
+
+    private void FixedUpdate()
+    {
+        scrapText.text = scrapMetalCollected.ToString();
+        shipText.text = shipPartsCollected.ToString();
+        pitfallText.text = pitFallsCollected.ToString();
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
