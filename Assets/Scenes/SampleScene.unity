@@ -2219,6 +2219,7 @@ GameObject:
   - component: {fileID: 1736026345}
   - component: {fileID: 1736026344}
   - component: {fileID: 1736026346}
+  - component: {fileID: 1736026347}
   m_Layer: 0
   m_Name: Cafe
   m_TagString: Untagged
@@ -2357,6 +2358,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1736026347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736026342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e39d70c5d2c1fac47bf201b92e8600bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1741399315
 GameObject:
   m_ObjectHideFlags: 0
