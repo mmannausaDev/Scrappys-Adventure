@@ -267,6 +267,7 @@ GameObject:
   - component: {fileID: 65638295}
   - component: {fileID: 65638296}
   - component: {fileID: 65638297}
+  - component: {fileID: 65638298}
   m_Layer: 0
   m_Name: GM
   m_TagString: GM
@@ -319,6 +320,19 @@ MonoBehaviour:
   gameUI: {fileID: 590066271}
   titleUI: {fileID: 1717978129}
   enemySpawner: {fileID: 138298831}
+--- !u!114 &65638298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65638294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89387d3ce53e81b4e9311e0bba387649, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rendererFeature: {fileID: 517122104416756941, guid: 424799608f7334c24bf367e4bbfa7f9a, type: 2}
 --- !u!4 &96852928 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3688994053443422442, guid: eea3c0781e6a1c740836f8d8452d9a50, type: 3}
