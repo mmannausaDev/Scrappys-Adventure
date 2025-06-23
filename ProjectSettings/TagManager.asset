@@ -10,6 +10,8 @@ TagManager:
   - Hitsound
   - GM
   - Enemy
+  - bullet
+  - AudioSource
   layers:
   - Default
   - TransparentFX
