@@ -9,6 +9,8 @@ public class ScrapGameHook : MonoBehaviour
     private int shipPartsCollected = 0;
     private int pitFallsCollected = 0;
 
+    [SerializeField] private Invintory invintory; 
+
     [SerializeField] private TextMeshProUGUI scrapText;
     [SerializeField] private TextMeshProUGUI shipText;
     [SerializeField] private TextMeshProUGUI pitfallText;
@@ -46,6 +48,10 @@ public class ScrapGameHook : MonoBehaviour
         //do something with the item picked up
         if(scrapMetalCollected + shipPartsCollected + pitFallsCollected >= numOfItemsToEndGame)
         {
+
+            for (int i = 0; i < scrapMetalCollected; i++) {
+                invintory.incrementScrapMetal(); 
+            }
              scrapMetalCollected = 0;
              shipPartsCollected = 0;
              pitFallsCollected = 0;
