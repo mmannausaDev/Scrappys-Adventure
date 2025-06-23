@@ -13,7 +13,7 @@ public class EnemySpawner : MonoBehaviour
     float minSpawnInterval = 0.3f;
     float spawnSpeedupRate = 0.025f;
 
-    void Start()
+    void Awake()
     {
         StartCoroutine(SpawnLoop());
     }
