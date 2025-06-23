@@ -249,7 +249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrapGame: {fileID: 1188872596}
-  invintory: {fileID: 0}
+  invintory: {fileID: 1875703549}
   scrapText: {fileID: 573980784}
   shipText: {fileID: 1101096338}
   pitfallText: {fileID: 2082075673}
