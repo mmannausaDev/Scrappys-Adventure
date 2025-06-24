@@ -2,13 +2,12 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 10f;
-    public Rigidbody2D rb;
+    [SerializeField] float moveSpeed = 10f;
 
     bool isTouching = false; // Flag to track if touch/mouse is active
     Vector2 targetPosition; // Store the target position for movement
 
-    public BoxCollider2D boundsBox;
+    [SerializeField] BoxCollider2D boundsBox;
 
     private float xMin, xMax;
     private float yMin, yMax;

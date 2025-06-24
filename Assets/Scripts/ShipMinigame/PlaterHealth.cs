@@ -13,6 +13,8 @@ public class PlaterHealth : MonoBehaviour
     SpriteRenderer sprite;
     bool canTakeDamage = true;
 
+    EndGameHandler endGameHandler;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,7 @@ public class PlaterHealth : MonoBehaviour
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
         obj = GameObject.FindGameObjectWithTag("GM");
+        endGameHandler = obj.GetComponent<EndGameHandler>();
         sprite = gameObject.GetComponent<SpriteRenderer>();
     }
 
@@ -32,7 +35,8 @@ public class PlaterHealth : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
-            Destroy(this.gameObject);        
+            Destroy(this.gameObject);
+            endGameHandler.endGame();
         }
     }
 
