@@ -4,15 +4,24 @@ public class Invintory : MonoBehaviour
 {
 
     int numScrapMetal = 0;
+    int numTickets = 0;
 
     bool FluxCapacitor = false;
     bool Fuel = false;
     bool DilithiumCrysatl = false;
     bool NavCube = false;
+    bool Spatula = false;
+    bool Necklace = false;
+
 
     public void incrementScrapMetal()
     { 
         numScrapMetal++;
+    }
+
+    public void incrementTickets()
+    {
+        numTickets++;
     }
 
     public void gainFluxCapacitor()
@@ -35,12 +44,27 @@ public class Invintory : MonoBehaviour
         NavCube = true;
     }
 
-     public int getNumScrapMetal()
+    public void gainSpatula()
+    {
+        Spatula = true;
+    }
+
+    public void gainNecklace()
+    {
+        Necklace = true;
+    }
+
+    public int getNumScrapMetal()
     {
         return numScrapMetal;
     }
 
-     public bool hasFluxCapacitor()
+    public int getNumTickets()
+    {
+        return numTickets;
+    }
+
+    public bool hasFluxCapacitor()
     {
         return FluxCapacitor; 
     }
@@ -59,10 +83,19 @@ public class Invintory : MonoBehaviour
     {
         return NavCube;
     }
-
-     public bool hasAllParts()
+    public bool hasSpatula()
     {
-        if (hasFluxCapacitor() && hasDilithiumCrysatl() && hasFuel() && hasNavCube())
+        return Spatula;
+    }
+
+    public bool hasNecklace()
+    {
+        return Necklace;
+    }
+
+    public bool hasAllParts()
+    {
+        if (hasFluxCapacitor() && hasDilithiumCrysatl() && hasFuel() && hasNavCube() && hasSpatula())
         {
             return true;
         }

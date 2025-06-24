@@ -22,6 +22,8 @@ public class ScrapGame : MonoBehaviour
     [SerializeField] private Transform spawnLocation;
     [SerializeField] private Transform initialSpawnLocation;
     private int spawnedScreens = 0;
+    [SerializeField] private bool spawnedShipPart = false;
+    [SerializeField] private bool spawnedNecklace = false;
 
     private List<GameObject> spawnedScreensList = new List<GameObject>();
     private List<GameObject> spawnedItemList = new List<GameObject>();
@@ -68,6 +70,8 @@ public class ScrapGame : MonoBehaviour
     {
         //Debug.Log("end game");
         cam.transform.position = new Vector3(0, 0, -10);
+        spawnedShipPart = false;
+        spawnedNecklace = false;
         for (int i = 0; i < spawnedScreensList.Count; i++)
         {
             Destroy(spawnedScreensList[i]); 
@@ -107,9 +111,15 @@ public class ScrapGame : MonoBehaviour
             }
         }
 
-
-        if (spawnedScreens > 10) {
+        if (spawnedScreens > 5 && !spawnedNecklace)
+        {
             SpawnObject(shipPart);
+            spawnedNecklace = true;
+        }
+
+        if (spawnedScreens > 10 && !spawnedShipPart) {
+            SpawnObject(shipPart);
+            spawnedShipPart = true; 
         }
     }
 
