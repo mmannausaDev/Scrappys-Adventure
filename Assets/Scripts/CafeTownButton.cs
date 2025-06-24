@@ -7,6 +7,6 @@ public class CafeTownButton : ClickableTownObj
     public override void switchToScreen()
     {
         Debug.Log("I am the override");
-        cafe.SetActive(true);
+        //cafe.SetActive(true);
     }
 }
