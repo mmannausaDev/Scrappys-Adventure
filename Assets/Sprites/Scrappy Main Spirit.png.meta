@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Scrappy Main Spirit_0: 2863725069051526224
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
