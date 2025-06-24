@@ -9,6 +9,9 @@ public class ScrapGameHook : MonoBehaviour
     private int shipPartsCollected = 0;
     private int pitFallsCollected = 0;
 
+    [SerializeField] int hookSpeed;
+
+
     [SerializeField] private Invintory invintory; 
 
     [SerializeField] private TextMeshProUGUI scrapText;
@@ -17,11 +20,46 @@ public class ScrapGameHook : MonoBehaviour
 
     [SerializeField] private int numOfItemsToEndGame;
 
+    [SerializeField] private BoxCollider2D boundsBox;
+
+
+    private float xMin, xMax;
+    private float yMin, yMax;
+
     private void FixedUpdate()
     {
         scrapText.text = scrapMetalCollected.ToString();
         shipText.text = shipPartsCollected.ToString();
         pitfallText.text = pitFallsCollected.ToString();
+    }
+
+    private void Start()
+    {
+        if (boundsBox != null)
+        {
+            Bounds bounds = boundsBox.bounds;
+            xMin = bounds.min.x;
+            xMax = bounds.max.x;
+            yMin = bounds.min.y;
+            yMax = bounds.max.y;
+        }
+    }
+
+    private void Update()
+    {
+
+        Vector2 inputPosition = Input.mousePosition;
+        Vector2 targetPosition = Camera.main.ScreenToWorldPoint(inputPosition);
+
+       
+
+        Vector2 newPosition = Vector2.MoveTowards(transform.position, targetPosition, hookSpeed * Time.deltaTime);
+
+        newPosition.x = Mathf.Clamp(newPosition.x, xMin, xMax);
+        newPosition.y = Mathf.Clamp(newPosition.y, yMin, yMax);
+
+        transform.position = newPosition;
+        
     }
 
 

@@ -45,14 +45,18 @@ public class ScrapGame : MonoBehaviour
     void Update()
     {
 
-        Vector3 screenPoint = Input.mousePosition;
-        Vector3 tempHookPos = Camera.main.ScreenToWorldPoint(screenPoint);
-        //tempHookPos.x = Mathf.Clamp(tempHookPos.x, minGameBoundry.x, maxGameBoundry.x);
-        //tempHookPos.y = Mathf.Clamp(tempHookPos.y, minGameBoundry.y, maxGameBoundry.y);
+        //Vector3 screenPoint = Input.mousePosition;
+        //Vector3 tempHookPos = Camera.main.ScreenToWorldPoint(screenPoint);
+
         //tempHookPos.z = 10.0f;
 
-        //hook.position = Vector3.MoveTowards(hook.position, tempHookPos,  hookSpeed * Time.deltaTime);
-        hook.MovePosition(hook.position + new Vector2(tempHookPos.x - hook.position.x, tempHookPos.y - hook.position.y) * hookSpeed * Time.deltaTime);
+        //tempHookPos = Vector3.MoveTowards(hook.position, tempHookPos,  hookSpeed * Time.deltaTime);
+
+        //tempHookPos.x = Mathf.Clamp(tempHookPos.x, minGameBoundry.x, maxGameBoundry.x);
+        //tempHookPos.y = Mathf.Clamp(tempHookPos.y, minGameBoundry.y, maxGameBoundry.y);
+
+        //hook.position = tempHookPos; 
+        //hook.MovePosition(hook.position + new Vector2(tempHookPos.x - hook.position.x, tempHookPos.y - hook.position.y) * hookSpeed * Time.deltaTime);
         //hook.position = tempHookPos; 
 
     }
