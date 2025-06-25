@@ -23,4 +23,9 @@ public class ScoreHandler : MonoBehaviour
     {
         scoreValue += val;
     }
+
+    public int getScore()
+    {
+        return scoreValue;
+    }
 }
