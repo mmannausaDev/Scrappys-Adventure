@@ -44,5 +44,11 @@ public class ClickableTownObj : MonoBehaviour
         isMouseOver=false;
     }
 
+    public void backtoTown()
+    {
+        cameraTransform.position = new Vector3(0,0,-15);
+        correspondingScreen.SetActive(false);
+    }
+
 
 }

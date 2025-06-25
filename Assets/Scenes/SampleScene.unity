@@ -292,6 +292,55 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!1 &33287157
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 33287159}
+  - component: {fileID: 33287158}
+  m_Layer: 0
+  m_Name: Dialogue2Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &33287158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33287157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d0e51302f50ad048a65ee5f3360a7fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialog:
+    name: Grumblo
+    sentences:
+    - Welcome back, take another crack at the machine if you want.
+    - Remember, we got prizes in the back for it.
+--- !u!4 &33287159
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33287157}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 375852024}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &45195478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1357,7 +1406,9 @@ Transform:
   m_Children:
   - {fileID: 1000629703}
   - {fileID: 484965680}
+  - {fileID: 33287159}
   - {fileID: 1213387736}
+  - {fileID: 1380047743}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &375852025
@@ -1374,6 +1425,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogCanvas: {fileID: 1310664135}
   dialogTrigger1: {fileID: 484965679}
+  dialogTrigger2: {fileID: 33287158}
+  dialogTriggerEndArcade: {fileID: 1380047744}
+  clickableTownObj: {fileID: 1383759332}
 --- !u!1 &393200482
 GameObject:
   m_ObjectHideFlags: 0
@@ -1613,7 +1667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialog:
-    name: Grublo
+    name: Grumblo
     sentences:
     - Oh hey, welcome the [Store name]. We sell all kinds of stuff.
     - That old arcade machine can be pretty fun. We got prizes in the back for it.
@@ -2454,6 +2508,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1621683964}
   - {fileID: 519420032}
   - {fileID: 619394802}
   - {fileID: 1741399317}
@@ -3310,9 +3365,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1205728289}
   - component: {fileID: 1205728288}
+  - component: {fileID: 1205728290}
+  - component: {fileID: 1205728291}
   m_Layer: 0
   m_Name: GM
-  m_TagString: Untagged
+  m_TagString: MainGM
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3345,6 +3402,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1205728290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205728287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d5e5abaef0ee9348a33bbd2f61b5b59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stuffToBringBack: {fileID: 641650405}
+  _rendererFeature: {fileID: 517122104416756941, guid: 424799608f7334c24bf367e4bbfa7f9a, type: 2}
+  shopDialog: {fileID: 375852025}
+--- !u!114 &1205728291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205728287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f0bddd33aa3df249b168b2968cd72a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalTickets: 0
 --- !u!1 &1213387735
 GameObject:
   m_ObjectHideFlags: 0
@@ -3962,6 +4047,54 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.38531387, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1380047742
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1380047743}
+  - component: {fileID: 1380047744}
+  m_Layer: 0
+  m_Name: DialogueLeaveTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1380047743
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380047742}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 375852024}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1380047744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380047742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d0e51302f50ad048a65ee5f3360a7fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialog:
+    name: Grumblo
+    sentences:
+    - Alright dude, store's closin' soon, you gotta go.
 --- !u!1 &1383759330
 GameObject:
   m_ObjectHideFlags: 0
@@ -5025,7 +5158,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 641650406}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1736026342
 GameObject:
@@ -6343,7 +6476,6 @@ SceneRoots:
   - {fileID: 545721224}
   - {fileID: 375852024}
   - {fileID: 366070754}
-  - {fileID: 1621683964}
   - {fileID: 1875703550}
   - {fileID: 1310664139}
   - {fileID: 641650406}
