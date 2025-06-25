@@ -4,26 +4,33 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Experimental.AI;
+using UnityEngine.UIElements;
 
 public class ScrapGame : MonoBehaviour
 {
 
     [SerializeField] Rigidbody2D hook;
-    [SerializeField] int hookSpeed;
+    //[SerializeField] int hookSpeed;
 
     [SerializeField] private GameObject scrapMetal;
     [SerializeField] private GameObject shipPart;
     [SerializeField] private GameObject pitfall;
 
     //might not be needed 
-    [SerializeField] private Vector2 minGameBoundry;
-    [SerializeField] private Vector2 maxGameBoundry;
+    //[SerializeField] private Vector2 minGameBoundry;
+    //[SerializeField] private Vector2 maxGameBoundry;
     [SerializeField] GameObject lastSpawnedScreen; 
     [SerializeField] private Transform spawnLocation;
     [SerializeField] private Transform initialSpawnLocation;
     private int spawnedScreens = 0;
-    [SerializeField] private bool spawnedShipPart = false;
-    [SerializeField] private bool spawnedNecklace = false;
+    private bool spawnedShipPart = false;
+    private bool spawnedNecklace = false;
+
+
+    [SerializeField] private TextMeshProUGUI scrapText;
+    [SerializeField] private GameObject shipText;
+    [SerializeField] private GameObject necklaceText;
+    [SerializeField] private GameObject endGameScreen;
 
     private List<GameObject> spawnedScreensList = new List<GameObject>();
     private List<GameObject> spawnedItemList = new List<GameObject>();
@@ -38,7 +45,7 @@ public class ScrapGame : MonoBehaviour
     private void Start()
     {
 
-        startGame(); 
+        //startGame(); 
     }
 
     // Update is called once per frame
@@ -70,9 +77,26 @@ public class ScrapGame : MonoBehaviour
 
     }
 
-    public void endGame()
+    public void endGame(int scrapMetalCollected, int shipPartsCollected, int necklaceCollected)
     {
-        //Debug.Log("end game");
+
+        endGameScreen.SetActive(true);
+        Debug.Log("Scrap metal int: " + scrapMetalCollected);
+        Debug.Log("Scrap metal string: " + scrapMetalCollected.ToString());
+        scrapText.text = scrapMetalCollected.ToString();
+        
+        if (shipPartsCollected > 0)
+        {
+
+            shipText.SetActive(true);
+        }
+        if (necklaceCollected > 0)
+        {
+
+            necklaceText.SetActive(true);
+        }
+
+
         cam.transform.position = new Vector3(0, 0, -10);
         spawnedShipPart = false;
         spawnedNecklace = false;
@@ -84,7 +108,10 @@ public class ScrapGame : MonoBehaviour
         {
             Destroy(spawnedItemList[i]);
         }
-        gameObject.SetActive(false);
+
+
+
+        //gameObject.SetActive(false);
     }
 
     private void FixedUpdate()
@@ -133,6 +160,12 @@ public class ScrapGame : MonoBehaviour
             new Vector2( spawnLocation.position.x + Random.Range(-3, 3), spawnLocation.position.y + Random.Range(-5, 5)), 
             Quaternion.identity));
 
+    }
+
+    public void closeEndGameRecap()
+    {
+        endGameScreen.SetActive(false);
+        gameObject.SetActive(false);
     }
 
 

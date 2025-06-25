@@ -210,7 +210,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Bolts and Nuts_0: 8447693715728012286
+      Bolts and Nuts_1: -338872568591163078
+      Bolts and Nuts_2: 4684241205310819164
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

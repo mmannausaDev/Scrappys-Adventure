@@ -8,6 +8,7 @@ public class ScrapGameHook : MonoBehaviour
     private int scrapMetalCollected = 0;
     private int shipPartsCollected = 0;
     private int pitFallsCollected = 0;
+    private int necklaceCollected = 0;
 
     [SerializeField] int hookSpeed;
 
@@ -29,6 +30,7 @@ public class ScrapGameHook : MonoBehaviour
     private void FixedUpdate()
     {
         scrapText.text = scrapMetalCollected.ToString();
+        Debug.Log(scrapMetalCollected.ToString()); 
         shipText.text = shipPartsCollected.ToString();
         pitfallText.text = pitFallsCollected.ToString();
     }
@@ -72,6 +74,11 @@ public class ScrapGameHook : MonoBehaviour
             //Debug.Log("picked up ScrapMetal");
             scrapMetalCollected++; 
         }
+        if (collision.CompareTag("Necklace"))
+        {
+            //Debug.Log("picked up necklace");
+            necklaceCollected++;
+        }
         if (collision.CompareTag("ShipPart"))
         {
             //Debug.Log("picked up ShipPart");
@@ -86,6 +93,8 @@ public class ScrapGameHook : MonoBehaviour
         //do something with the item picked up
         if(scrapMetalCollected + shipPartsCollected + pitFallsCollected >= numOfItemsToEndGame)
         {
+            //Debug.Log(scrapMetalCollected);
+            scrapGame.endGame(scrapMetalCollected, shipPartsCollected, necklaceCollected);
 
             for (int i = 0; i < scrapMetalCollected; i++) {
                 invintory.incrementScrapMetal(); 
@@ -93,8 +102,8 @@ public class ScrapGameHook : MonoBehaviour
              scrapMetalCollected = 0;
              shipPartsCollected = 0;
              pitFallsCollected = 0;
+             necklaceCollected = 0;
 
-            scrapGame.endGame();
         }
 
 

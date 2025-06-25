@@ -12,6 +12,7 @@ TagManager:
   - Enemy
   - bullet
   - AudioSource
+  - Necklace
   layers:
   - Default
   - TransparentFX
