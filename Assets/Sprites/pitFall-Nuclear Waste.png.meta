@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pitFall-Nuclear Waste_0: -1490824320096477571
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
