@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1259248980321870081}
   - component: {fileID: 1263317159783791892}
   - component: {fileID: 3221754682470860782}
-  - component: {fileID: 4240856777972465495}
+  - component: {fileID: 6448783951268190543}
   m_Layer: 0
   m_Name: Scrap
   m_TagString: ScrapMetal
@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 4406473056793235654}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 37.679, y: -14.8365, z: 0}
-  m_LocalScale: {x: 0.55620456, y: 0.5452, z: 1}
+  m_LocalPosition: {x: 37.9255, y: -15.2948, z: 0}
+  m_LocalScale: {x: 0.09339261, y: 0.09154482, z: 0.16791055}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: 6077916083991358780, guid: 4dca9d8a75205474ebf5df89854b36dd, type: 3}
   m_Color: {r: 0.6603774, g: 0.6431934, b: 0.57191175, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,8 +103,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentSpeed: 2
   yPostoDelete: 10
---- !u!61 &4240856777972465495
-BoxCollider2D:
+--- !u!58 &6448783951268190543
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -137,15 +137,5 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.030359529, y: 0.11989501}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 0.45352858, y: 0.81712335}
-  m_EdgeRadius: 0
+  m_Offset: {x: -0.5, y: 0}
+  m_Radius: 3
