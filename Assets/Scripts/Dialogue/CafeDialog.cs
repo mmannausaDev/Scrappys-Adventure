@@ -6,6 +6,8 @@ public class CafeDialog : MonoBehaviour
 
     [SerializeField] DialogTrigger dialogTrigger1;
 
+    [SerializeField] ClickableTownObj clickableTownObj;
+
     private void Awake()
     {
         DialogCanvas.SetActive(true);
@@ -18,5 +20,13 @@ public class CafeDialog : MonoBehaviour
     public void triggerDialog1()
     {
         dialogTrigger1.TriggerDialog();
+    }
+
+    public void leaveCafe()
+    {
+        if (!DialogCanvas.activeSelf)
+        {
+            clickableTownObj.backtoTown();
+        }
     }
 }
