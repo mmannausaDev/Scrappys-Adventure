@@ -249,11 +249,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrapGame: {fileID: 1188872596}
+  blessed: 1
   hookSpeed: 3
   invintory: {fileID: 1875703549}
   scrapText: {fileID: 243400491}
   shipText: {fileID: 1101096338}
   pitfallText: {fileID: 2082075673}
+  necklaceText: {fileID: 0}
+  bagLimitText: {fileID: 0}
   numOfItemsToEndGame: 5
   boundsBox: {fileID: 1311625193}
 --- !u!58 &17710331
@@ -508,9 +511,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ShrineDialog, Assembly-CSharp
-        m_MethodName: leaveShrine
+      - m_Target: {fileID: 1356698485}
+        m_TargetAssemblyTypeName: PirateDialog, Assembly-CSharp
+        m_MethodName: leavePrate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4445,7 +4448,7 @@ GameObject:
   m_Component:
   - component: {fileID: 976259557}
   - component: {fileID: 976259556}
-  - component: {fileID: 976259555}
+  - component: {fileID: 976259558}
   m_Layer: 0
   m_Name: ShrineScreen
   m_TagString: Untagged
@@ -4453,18 +4456,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &976259555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 976259554}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb3bbc5c5a6a1614cb28a78b96d7e896, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &976259556
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4538,6 +4529,23 @@ Transform:
   - {fileID: 2115132260}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &976259558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976259554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d6ad378e35625f4d8ec622c81e68a99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DialogCanvas: {fileID: 1310664135}
+  dialogTrigger1: {fileID: 268291348}
+  clickableTownObj: {fileID: 1232020104}
+  ScrapGame: {fileID: 17710330}
+  ticketHandler: {fileID: 1205728291}
 --- !u!1 &990516349
 GameObject:
   m_ObjectHideFlags: 0
@@ -5167,7 +5175,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 976259555}
+      - m_Target: {fileID: 976259558}
         m_TargetAssemblyTypeName: ShrineDialog, Assembly-CSharp
         m_MethodName: leaveShrine
         m_Mode: 1
@@ -7074,7 +7082,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1356698484}
   - component: {fileID: 1356698483}
-  - component: {fileID: 1356698482}
+  - component: {fileID: 1356698485}
   m_Layer: 0
   m_Name: PirateScreen
   m_TagString: Untagged
@@ -7082,18 +7090,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1356698482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1356698481}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89f6b6c38f09af4429b17616892ba895, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &1356698483
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7167,6 +7163,21 @@ Transform:
   - {fileID: 108817650}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1356698485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356698481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29bc66edc721dfc41a3e6426d8d32bde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DialogCanvas: {fileID: 0}
+  dialogTrigger1: {fileID: 0}
+  clickableTownObj: {fileID: 0}
 --- !u!1 &1380047742
 GameObject:
   m_ObjectHideFlags: 0
