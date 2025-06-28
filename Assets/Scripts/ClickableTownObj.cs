@@ -2,11 +2,19 @@ using UnityEngine;
 
 public class ClickableTownObj : MonoBehaviour
 {
-    private bool isMouseOver;
-    [SerializeField] private Transform cameraTransform;
-    [SerializeField] private Vector3 newCameraPos;
-    [SerializeField] private GameObject correspondingScreen;
+    protected bool isMouseOver;
+    [SerializeField] protected Transform cameraTransform;
+    [SerializeField] protected Vector3 newCameraPos;
+    [SerializeField] protected GameObject correspondingScreen;
 
+    ActionsTracker actionsTracker;
+    GameObject GM;
+
+    private void Start()
+    {
+        GM = GameObject.FindGameObjectWithTag("MainGM");
+        actionsTracker = GM.GetComponent<ActionsTracker>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -16,6 +24,9 @@ public class ClickableTownObj : MonoBehaviour
             cameraTransform.position = newCameraPos;
             correspondingScreen.SetActive(true);
             switchToScreen();
+
+            //Every time you go somewhere it will use an action for the day
+            actionsTracker.useAction();
         }
     }
 

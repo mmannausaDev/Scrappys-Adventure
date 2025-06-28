@@ -97,7 +97,7 @@ public class ScrapGame : MonoBehaviour
         }
 
 
-        cam.transform.position = new Vector3(0, 0, -10);
+        cam.transform.position = new Vector3(0, 0, -15);
         spawnedShipPart = false;
         spawnedNecklace = false;
         for (int i = 0; i < spawnedScreensList.Count; i++)
