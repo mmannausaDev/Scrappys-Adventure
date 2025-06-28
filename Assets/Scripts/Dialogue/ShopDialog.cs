@@ -4,12 +4,14 @@ public class ShopDialog : MonoBehaviour
 {
     [SerializeField] GameObject DialogCanvas;
 
-    [SerializeField] DialogTrigger dialogTrigger1, dialogTrigger2, dialogTriggerEndArcade;
+    [SerializeField] DialogTrigger dialogTrigger1, dialogTrigger2, dialogTriggerEndArcade, dialogTriggerShipPart;
 
     bool triggeredDialog1 = false;
     bool timeToLeave = false;
+    bool gotShipPart = false;
 
     [SerializeField] ClickableTownObj clickableTownObj;
+    [SerializeField] TicketHandler ticketHandler;
 
     private void OnEnable()
     {
@@ -19,6 +21,11 @@ public class ShopDialog : MonoBehaviour
         if (!triggeredDialog1)
         {
             triggerDialog1();
+        }
+        else if (ticketHandler.getTickets() >= 50000 && !gotShipPart)
+        {
+            gotShipPart = true;
+            triggerGetShipPartDialog();
         }
         else
         {
@@ -50,11 +57,24 @@ public class ShopDialog : MonoBehaviour
         dialogTrigger2.TriggerDialog();
     }
 
+    public void triggerGetShipPartDialog()
+    {
+        dialogTriggerShipPart.TriggerDialog();
+    }
+
     public void triggerDialogEndArcade()
     {
         DialogCanvas.SetActive(true);
         dialogTriggerEndArcade.TriggerDialog();
 
         timeToLeave = true;
+    }
+
+    public void leaveShop()
+    {
+        if (!DialogCanvas.activeSelf)
+        {
+            clickableTownObj.backtoTown();
+        }
     }
 }
