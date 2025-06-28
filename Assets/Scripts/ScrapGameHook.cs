@@ -5,6 +5,10 @@ public class ScrapGameHook : MonoBehaviour
 {
     [SerializeField] ScrapGame scrapGame;
 
+
+    [SerializeField] private bool blessed = true;
+    private int blessedBonus = 3;
+
     private int scrapMetalCollected = 0;
     private int shipPartsCollected = 0;
     private int pitFallsCollected = 0;
@@ -13,11 +17,13 @@ public class ScrapGameHook : MonoBehaviour
     [SerializeField] int hookSpeed;
 
 
-    [SerializeField] private Invintory invintory; 
+    [SerializeField] private Invintory invintory;
 
     [SerializeField] private TextMeshProUGUI scrapText;
     [SerializeField] private TextMeshProUGUI shipText;
     [SerializeField] private TextMeshProUGUI pitfallText;
+    [SerializeField] private TextMeshProUGUI necklaceText;
+    [SerializeField] private TextMeshProUGUI bagLimitText;
 
     [SerializeField] private int numOfItemsToEndGame;
 
@@ -30,9 +36,11 @@ public class ScrapGameHook : MonoBehaviour
     private void FixedUpdate()
     {
         scrapText.text = scrapMetalCollected.ToString();
-        Debug.Log(scrapMetalCollected.ToString()); 
+        Debug.Log(scrapMetalCollected.ToString());
         shipText.text = shipPartsCollected.ToString();
         pitfallText.text = pitFallsCollected.ToString();
+        necklaceText.text = necklaceCollected.ToString();
+        bagLimitText.text = (numOfItemsToEndGame + blessedCalc()).ToString();
     }
 
     private void Start()
@@ -53,7 +61,7 @@ public class ScrapGameHook : MonoBehaviour
         Vector2 inputPosition = Input.mousePosition;
         Vector2 targetPosition = Camera.main.ScreenToWorldPoint(inputPosition);
 
-       
+
 
         Vector2 newPosition = Vector2.MoveTowards(transform.position, targetPosition, hookSpeed * Time.deltaTime);
 
@@ -61,18 +69,18 @@ public class ScrapGameHook : MonoBehaviour
         newPosition.y = Mathf.Clamp(newPosition.y, yMin, yMax);
 
         transform.position = newPosition;
-        
+
     }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+
 
         if (collision.CompareTag("ScrapMetal"))
         {
             //Debug.Log("picked up ScrapMetal");
-            scrapMetalCollected++; 
+            scrapMetalCollected++;
         }
         if (collision.CompareTag("Necklace"))
         {
@@ -90,23 +98,44 @@ public class ScrapGameHook : MonoBehaviour
             pitFallsCollected++;
         }
 
+
         //do something with the item picked up
-        if(scrapMetalCollected + shipPartsCollected + pitFallsCollected >= numOfItemsToEndGame)
+        if (scrapMetalCollected + shipPartsCollected + pitFallsCollected >= (numOfItemsToEndGame + blessedCalc()))
         {
             //Debug.Log(scrapMetalCollected);
             scrapGame.endGame(scrapMetalCollected, shipPartsCollected, necklaceCollected);
 
-            for (int i = 0; i < scrapMetalCollected; i++) {
-                invintory.incrementScrapMetal(); 
+            for (int i = 0; i < scrapMetalCollected; i++)
+            {
+                invintory.incrementScrapMetal();
             }
-             scrapMetalCollected = 0;
-             shipPartsCollected = 0;
-             pitFallsCollected = 0;
-             necklaceCollected = 0;
+            scrapMetalCollected = 0;
+            shipPartsCollected = 0;
+            pitFallsCollected = 0;
+            necklaceCollected = 0;
+            blessed = false;
 
         }
 
 
         collision.gameObject.SetActive(false);
     }
+
+    private int blessedCalc()
+    {
+        if (blessed)
+        {
+            return blessedBonus;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+    public void setBlessed()
+    {
+        blessed = true;
+    }
+
 }
