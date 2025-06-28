@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Fish Oil_0: 178198285337471028
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
