@@ -6,7 +6,7 @@ public class ScrapGameHook : MonoBehaviour
     [SerializeField] ScrapGame scrapGame;
 
 
-    [SerializeField] private bool blessed = true;
+    [SerializeField] private bool blessed = false;
     private int blessedBonus = 3;
 
     private int scrapMetalCollected = 0;
@@ -104,6 +104,15 @@ public class ScrapGameHook : MonoBehaviour
         {
             //Debug.Log(scrapMetalCollected);
             scrapGame.endGame(scrapMetalCollected, shipPartsCollected, necklaceCollected);
+            
+            if(shipPartsCollected >= 1)
+            {
+                invintory.gainFluxCapacitor(); 
+            }
+            if (necklaceCollected >= 1)
+            {
+                invintory.gainNecklace(); 
+            }
 
             for (int i = 0; i < scrapMetalCollected; i++)
             {

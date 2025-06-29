@@ -5,7 +5,10 @@ public class ShrineDialog : MonoBehaviour
 
     [SerializeField] GameObject DialogCanvas;
 
+    private bool firstConvo = true;
+
     [SerializeField] DialogTrigger dialogTrigger1;
+    [SerializeField] DialogTrigger dialogTrigger2;
 
     [SerializeField] ClickableTownObj clickableTownObj;
 
@@ -17,15 +20,30 @@ public class ShrineDialog : MonoBehaviour
     {
         DialogCanvas.SetActive(true);
 
-        //Logic for which dialog triggers when you enter the cafe will go here
-        triggerDialog1();
- 
+
+        if (firstConvo)
+        {
+            triggerDialog1();
+            firstConvo = false;
+        }
+        else {
+            triggerDialog2();
+
+        }
+
+
+
     }
 
 
     public void triggerDialog1()
     {
         dialogTrigger1.TriggerDialog();
+    }
+
+    public void triggerDialog2()
+    {
+        dialogTrigger2.TriggerDialog();
     }
 
 
