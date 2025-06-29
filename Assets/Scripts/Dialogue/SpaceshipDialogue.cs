@@ -7,12 +7,15 @@ public class SpaceshipDialogue : MonoBehaviour
 
     [SerializeField] DialogTrigger dialogTrigger1, dialogTrigger2, dialogTrigger3;
 
-    bool triggeredDialog1 = false;
-    bool timeToLeave = false;
-
     [SerializeField] ClickableTownObj clickableTownObj;
     [SerializeField] Invintory inventory;
     bool hasAllParts = false;
+
+
+    private void Start()
+    {
+        triggerDialog1();
+    }
 
     private void OnEnable()
     {
@@ -22,10 +25,6 @@ public class SpaceshipDialogue : MonoBehaviour
         if (inventory.hasAllParts())
         {
             triggerDialog3();
-        }
-        else if (!triggeredDialog1)
-        {
-            triggerDialog1();
         }
         else
         {
@@ -43,7 +42,6 @@ public class SpaceshipDialogue : MonoBehaviour
 
     public void triggerDialog1()
     {
-        triggeredDialog1 = true;
         dialogTrigger1.TriggerDialog();
     }
 

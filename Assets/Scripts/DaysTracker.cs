@@ -15,6 +15,7 @@ public class DaysTracker : MonoBehaviour
     [SerializeField] TMP_Text dayendscreenText;
     [SerializeField] AudioSource soundFX;
     [SerializeField] Invintory inventory;
+    [SerializeField] GameObject thingsToDisable;
 
     private void Start()
     {
@@ -67,11 +68,12 @@ public class DaysTracker : MonoBehaviour
         }
         else
         {
-
+            thingsToDisable.SetActive(false);
             dayEndScreen.SetActive(true);
             //soundFX.Play();
             yield return new WaitForSeconds(3f);
             dayEndScreen.SetActive(false);
+            thingsToDisable.SetActive(true);
         }
     }
 }

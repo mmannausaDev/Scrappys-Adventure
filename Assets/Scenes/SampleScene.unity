@@ -644,7 +644,7 @@ MonoBehaviour:
     name: Grumblo
     sentences:
     - Welcome back, take a crack at the machine if you want.
-    - Remember, we got prizes in the back for it.
+    - Remember that it costs a coin to play. We also got prizes in the back.
 --- !u!4 &33287159
 Transform:
   m_ObjectHideFlags: 0
@@ -841,7 +841,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialog:
-    name: Waitress
+    name: Peggy
     sentences:
     - 'Thank you for finding my necklace. '
 --- !u!1 &61684591
@@ -2018,9 +2018,9 @@ MonoBehaviour:
     sentences:
     - 'Hello my child, how are you on this blessed day? '
     - You crashed landed on in the city below, are you hurt
-    - its good to hear you are ok, what are you to do about your predicament?
-    - I see, you need parts to fix up your ship. I am sorry I have nothing of use
-      for you here.
+    - It is good to hear you are ok, what are you to do about your predicament?
+    - I see, you need parts to fix your ship. I am sorry I have nothing of use for
+      you here.
     - 'I still might be able to assist you, I can bless you with good luck for whatever
       it is you need to get off this planet. '
 --- !u!4 &268291349
@@ -2304,8 +2304,8 @@ RectTransform:
   m_GameObject: {fileID: 297590646}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.125, y: 0.125, z: 0.125}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1101096336}
   m_Father: {fileID: 576331351}
@@ -2313,7 +2313,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -215, y: -96}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 706, y: 886}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &297590648
 MonoBehaviour:
@@ -2572,8 +2572,11 @@ MonoBehaviour:
     name: 02-X3
     sentences:
     - Hey boss! You find any parts yet?
-    - 'Remember, I need these 5 parts:'
+    - 'Remember, I need these 4 parts:'
     - A Navcube, a Slotted Gear Shift, a Flux Capacitor, and some oil.
+    - You can press E while on the town map to check your inventory.
+    - Remember! We only have 4 days to get out of here so choose what you do carefully!
+      Each place you go takes up precious time!
 --- !u!4 &343252795
 Transform:
   m_ObjectHideFlags: 0
@@ -2855,9 +2858,9 @@ RectTransform:
   - {fileID: 45195479}
   m_Father: {fileID: 1966714393}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 258.97, y: -116}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -89.7, y: 22.6}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &393200484
@@ -3114,16 +3117,16 @@ RectTransform:
   m_GameObject: {fileID: 435778133}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1704094079}
   m_Father: {fileID: 1067811947}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -413, y: -220}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -308.7, y: -192.5}
+  m_SizeDelta: {x: 348, y: 633}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &435778135
 MonoBehaviour:
@@ -3316,16 +3319,16 @@ RectTransform:
   m_GameObject: {fileID: 463446659}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1414578701}
   m_Father: {fileID: 1067811947}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -413, y: -88}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -308.7, y: -75.5}
+  m_SizeDelta: {x: 706, y: 886}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &463446661
 MonoBehaviour:
@@ -3533,9 +3536,9 @@ MonoBehaviour:
   dialog:
     name: Grumblo
     sentences:
-    - Oh hey, welcome the [Store name]. We sell all kinds of stuff.
+    - Oh hey, welcome the Florp-Mart. We sell all kinds of stuff.
     - That old arcade machine can be pretty fun. We got prizes in the back for it.
-    - It takes coins to play.
+    - But ya gotta have some coins to play it.
 --- !u!4 &484965680
 Transform:
   m_ObjectHideFlags: 0
@@ -3601,8 +3604,8 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
+  m_RenderPostProcessing: 1
+  m_Antialiasing: 2
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
@@ -3953,14 +3956,14 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 971262647}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 213, y: -50}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 1169.1, y: -231.01598}
+  m_SizeDelta: {x: 530.552, y: 412.035}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &573980783
 CanvasRenderer:
@@ -4017,8 +4020,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 300
+  m_fontSizeBase: 300
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4726,7 +4729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialog:
-    name: Waitress
+    name: Peggy
     sentences:
     - Have you found my necklace yet?
     - 'You might want to give a vist to the shrine up in the mountains to see if
@@ -5392,16 +5395,16 @@ RectTransform:
   m_GameObject: {fileID: 784156878}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.125, y: 0.125, z: 0.125}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 243400490}
   m_Father: {fileID: 1067811947}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -413, y: 175}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -308.7, y: 154}
+  m_SizeDelta: {x: 787, y: 522}
   m_Pivot: {x: 0.50000006, y: 0.5}
 --- !u!114 &784156880
 MonoBehaviour:
@@ -5476,8 +5479,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -503, y: 100.6}
-  m_SizeDelta: {x: 1006, y: 201.19}
+  m_AnchoredPosition: {x: -400, y: 103.88}
+  m_SizeDelta: {x: 800, y: 207.74}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &817365464
 MonoBehaviour:
@@ -5780,16 +5783,14 @@ MonoBehaviour:
   dialog:
     name: SharkFace
     sentences:
-    - 'Hello Sonny what brings you to the shores of PLANET NAME. '
-    - I see marooned on an foreign shores hate to see happen to a fellow captain
-    - "You must have one of them fancy flying ships, I think I have just the thing,
+    - Hello Sonny, what brings you to the shores of TRATH?
+    - I see, marooned on foreign shores, hate to see happen to a fellow captain.
+    - "You must have one of them fancy flying ships. I think I have just the thing,
       but ill need something from you first. \r\n"
-    - 'I have barrels of fish oil I use for my special deep fried lizard tails that
+    - I have barrels of fish oil I use for my special deep fried lizard tails that
       the locals love.
-
-'
-    - 'I might be able to part with some oil for your ship if you can get me some
-      scrap metal in return so that I can fix up my ship.  '
+    - I might be able to part with some oil for your ship...  if you can get me some
+      scrap metal in return so that I can fix up my ship too.
 --- !u!4 &912767182
 Transform:
   m_ObjectHideFlags: 0
@@ -5968,8 +5969,8 @@ RectTransform:
   m_GameObject: {fileID: 971262646}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 573980782}
   m_Father: {fileID: 576331351}
@@ -5977,7 +5978,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -215, y: 93}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 787, y: 522}
   m_Pivot: {x: 0.50000006, y: 0.5}
 --- !u!114 &971262648
 MonoBehaviour:
@@ -6975,8 +6976,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 225.10443, y: -49.551666}
-  m_SizeDelta: {x: 224.2089, y: 49.1033}
+  m_AnchoredPosition: {x: 2031.3, y: -257.3}
+  m_SizeDelta: {x: 2565.8, y: 49.1033}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1101096337
 CanvasRenderer:
@@ -7017,7 +7018,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -7035,8 +7036,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 300
+  m_fontSizeBase: 300
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7654,9 +7655,9 @@ RectTransform:
   - {fileID: 585322813}
   m_Father: {fileID: 1966714393}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -116}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 22.6}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1199613127
@@ -7790,6 +7791,11 @@ MonoBehaviour:
     - We'll need repairs before we get back into space.
     - There are 4 parts I need to replace if we're getting off this rock.
     - We need a Navcube, a Slotted Gear Shift, a Flux Capacitor, and some oil.
+    - Try exploring the area and see what you can find!
+    - You can press E while on the town map to check your inventory.
+    - Remember! We only have 4 days to get out of here so choose what you do carefully!
+      Each place you go takes up precious time!
+    - You can return here any time if you forget what you're supposed to be doing!
 --- !u!4 &1202210729
 Transform:
   m_ObjectHideFlags: 0
@@ -7819,6 +7825,7 @@ GameObject:
   - component: {fileID: 1205728291}
   - component: {fileID: 1205728293}
   - component: {fileID: 1205728292}
+  - component: {fileID: 1205728294}
   m_Layer: 0
   m_Name: GM
   m_TagString: MainGM
@@ -7902,6 +7909,7 @@ MonoBehaviour:
   dayendscreenText: {fileID: 1138338929}
   soundFX: {fileID: 1854786373}
   inventory: {fileID: 1875703549}
+  thingsToDisable: {fileID: 1741399315}
 --- !u!114 &1205728293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7916,6 +7924,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionsPerDay: 3
   daysTracker: {fileID: 1205728292}
+--- !u!114 &1205728294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205728287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 822a8cae19478694bb06137785a7f124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceshipbutton: {fileID: 1569407479}
 --- !u!1 &1213387735
 GameObject:
   m_ObjectHideFlags: 0
@@ -8652,7 +8673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -9185,7 +9206,7 @@ Transform:
   m_GameObject: {fileID: 1383759330}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.369, y: -0.194, z: 0}
+  m_LocalPosition: {x: -0.092, y: -0.23, z: 0}
   m_LocalScale: {x: 0.13235545, y: 0.15001105, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9419,8 +9440,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -10.567, y: 62}
-  m_SizeDelta: {x: 958.87, y: 50}
+  m_AnchoredPosition: {x: -16.6, y: 69.1}
+  m_SizeDelta: {x: 717.9773, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1414506725
 CanvasRenderer:
@@ -9694,7 +9715,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.0000076293945, y: 0}
-  m_SizeDelta: {x: 677.948, y: 169.4841}
+  m_SizeDelta: {x: 513.23, y: 169.4841}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1416482275
 MonoBehaviour:
@@ -10479,8 +10500,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: -17.767}
-  m_SizeDelta: {x: 937.7321, y: 109.53}
+  m_AnchoredPosition: {x: -5.4847, y: 6.8}
+  m_SizeDelta: {x: 704.4697, y: 89.9098}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1508935345
 MonoBehaviour:
@@ -10647,7 +10668,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -11070,7 +11091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -11149,10 +11170,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialog:
-    name: Waitress
+    name: Peggy
     sentences:
-    - 'Oh you found my necklace, thank you darling, you saved me,  '
-    - "here take this spatula, and this coin on a string for your troubles.\r"
+    - 'Oh you found my necklace! Thank you darling, you saved me,  '
+    - "Here, take this spatula and this coin on a string for your troubles. It'll
+      let you play that old arcade machine down the street.\r"
 --- !u!1 &1614132905
 GameObject:
   m_ObjectHideFlags: 0
@@ -12140,7 +12162,7 @@ Transform:
   m_GameObject: {fileID: 1736026342}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.091, y: -0.258, z: 0}
+  m_LocalPosition: {x: 0.361, y: -0.204, z: 0}
   m_LocalScale: {x: -0.1339508, y: 0.16070019, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12455,16 +12477,16 @@ RectTransform:
   m_GameObject: {fileID: 1827922213}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1518053393}
   m_Father: {fileID: 576331351}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -291, y: -146}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -291, y: 16.8}
+  m_SizeDelta: {x: 348, y: 633}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1827922215
 MonoBehaviour:
@@ -12902,10 +12924,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 576331351}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -184.73, y: 241.1034}
-  m_SizeDelta: {x: 200, y: 51.7932}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -25.896606}
+  m_SizeDelta: {x: 200, y: 51.793213}
   m_Pivot: {x: 0.40137097, y: 0.5}
 --- !u!114 &1918096714
 MonoBehaviour:
@@ -12927,7 +12949,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'You Got:'
+  m_text: You Got
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 283f107523250154d9847001cdbba560, type: 2}
   m_sharedMaterial: {fileID: 4785820597829852315, guid: 283f107523250154d9847001cdbba560, type: 2}
@@ -12954,14 +12976,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 55.3
+  m_fontSizeBase: 55.3
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -13195,16 +13217,16 @@ RectTransform:
   m_GameObject: {fileID: 1931726104}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2082075675}
   m_Father: {fileID: 1067811947}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -413, y: 38}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -308.7, y: 50}
+  m_SizeDelta: {x: 403, y: 460}
   m_Pivot: {x: 0.50000006, y: 0.5}
 --- !u!114 &1931726106
 MonoBehaviour:
@@ -13281,8 +13303,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -213.90427}
-  m_SizeDelta: {x: 0, y: -427.8086}
+  m_AnchoredPosition: {x: 0, y: -145.90494}
+  m_SizeDelta: {x: 0, y: -291.81012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1949451635
 MonoBehaviour:
@@ -13756,17 +13778,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialog:
-    name: Waitress
+    name: Peggy
     sentences:
-    - "Hi sugar what can I get you today, are you new in town I haven't seen you
-      around these parts before what brings you to PLANET NAME?\r"
+    - "Hi sugar what can I get you today. Are you new in town? I haven't seen you
+      around these parts before. What brings you to TRATH?\r"
     - "You crash landed! That must of been them noises we all heard last night.\r"
     - "Youre trying to get off the planet, and you are looking for a ... slotted
-      gear shift. Welllll I don't think we have one of them here, but we do have
-      spatulas. Will that work?\r"
-    - It's hard to get supplies out here. Tell ya what you help me find my missing
-      necklace, the old ball and chain I gave me before he gets home next week and
-      i'll give you the spatula in return.
+      gear shift.\r"
+    - Welllll I don't think we have one of them here, but we do have spatulas. Will
+      that work?
+    - 'It''s hard to get supplies out here. Tell ya what you help me find my missing
+      necklace that old ball and chain gave me... '
+    - ...and i'll give you the spatula and some loose change in return.
 --- !u!1 &2115132259
 GameObject:
   m_ObjectHideFlags: 0
