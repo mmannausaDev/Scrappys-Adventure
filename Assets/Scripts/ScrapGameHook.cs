@@ -9,6 +9,8 @@ public class ScrapGameHook : MonoBehaviour
     [SerializeField] private bool blessed = false;
     private int blessedBonus = 3;
 
+    [SerializeField] AudioSource hitsound;
+
     private int scrapMetalCollected = 0;
     private int shipPartsCollected = 0;
     private int pitFallsCollected = 0;
@@ -81,21 +83,25 @@ public class ScrapGameHook : MonoBehaviour
         {
             //Debug.Log("picked up ScrapMetal");
             scrapMetalCollected++;
+            hitsound.Play();
         }
         if (collision.CompareTag("Necklace"))
         {
             //Debug.Log("picked up necklace");
             necklaceCollected++;
+            hitsound.Play();
         }
         if (collision.CompareTag("ShipPart"))
         {
             //Debug.Log("picked up ShipPart");
             shipPartsCollected++;
+            hitsound.Play();
         }
         if (collision.CompareTag("PitFall"))
         {
             //Debug.Log("picked up PitFall");
             pitFallsCollected++;
+            hitsound.Play();
         }
 
 
