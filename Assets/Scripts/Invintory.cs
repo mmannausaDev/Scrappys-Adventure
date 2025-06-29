@@ -12,6 +12,7 @@ public class Invintory : MonoBehaviour
     bool NavCube = false;
     bool Spatula = false;
     bool Necklace = false;
+    bool Coin = false;
 
 
     public void incrementScrapMetal()
@@ -54,6 +55,11 @@ public class Invintory : MonoBehaviour
         Necklace = true;
     }
 
+    public void gainCoin()
+    {
+        Coin = true;
+    }
+
     public int getNumScrapMetal()
     {
         return numScrapMetal;
@@ -86,6 +92,10 @@ public class Invintory : MonoBehaviour
     public bool hasSpatula()
     {
         return Spatula;
+    }
+    public bool hasCoin()
+    {
+        return Coin;
     }
 
     public bool hasNecklace()
