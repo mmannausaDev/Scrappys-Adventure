@@ -3,14 +3,14 @@ using System.Collections;
 
 public class StarScript : MonoBehaviour
 {
-    Rigidbody2D rb;
     [SerializeField] float force;
     Vector3 endPosition;
+    [SerializeField] GameObject GM;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        rb = gameObject.GetComponent<Rigidbody2D>();
+        GM = GameObject.FindGameObjectWithTag("GM");
         StartCoroutine(DestroyObjectCoroutine());
         endPosition = new Vector3(transform.position.x, -10, transform.position.z);
     }
@@ -19,6 +19,11 @@ public class StarScript : MonoBehaviour
     void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, endPosition, force * Time.deltaTime);
+
+        if (GM == null)
+        {
+            Destroy(gameObject);
+        }
     }
 
     IEnumerator DestroyObjectCoroutine()

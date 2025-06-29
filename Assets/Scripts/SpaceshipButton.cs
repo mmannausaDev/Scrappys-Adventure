@@ -6,9 +6,14 @@ public class SpaceshipButton : ClickableTownObj
     {
         if (Input.GetMouseButtonDown(0) && isMouseOver)
         {
-            cameraTransform.position = newCameraPos;
-            correspondingScreen.SetActive(true);
-            switchToScreen();
+            switchingScreens();
         }
+    }
+
+    public void switchingScreens()
+    {
+        cameraTransform.position = newCameraPos;
+        correspondingScreen.SetActive(true);
+        switchToScreen();
     }
 }
