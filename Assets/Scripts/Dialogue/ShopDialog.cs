@@ -13,6 +13,8 @@ public class ShopDialog : MonoBehaviour
     [SerializeField] ClickableTownObj clickableTownObj;
     [SerializeField] TicketHandler ticketHandler;
 
+    [SerializeField] Invintory inventory;
+
     private void OnEnable()
     {
         DialogCanvas.SetActive(true);
@@ -25,6 +27,7 @@ public class ShopDialog : MonoBehaviour
         else if (ticketHandler.getTickets() >= 50000 && !gotShipPart)
         {
             gotShipPart = true;
+            inventory.gainNavCube();
             triggerGetShipPartDialog();
         }
         else

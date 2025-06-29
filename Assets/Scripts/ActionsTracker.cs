@@ -12,7 +12,7 @@ public class ActionsTracker : MonoBehaviour
         startOfDay();
     }
 
-    void startOfDay()
+    public void startOfDay()
     {
         actionsLeft = actionsPerDay;
     }
@@ -24,7 +24,6 @@ public class ActionsTracker : MonoBehaviour
         if(actionsLeft <= 0)
         {
             daysTracker.useDay();
-            startOfDay();
         }
     }
 

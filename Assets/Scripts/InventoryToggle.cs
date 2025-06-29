@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class InventoryToggle : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class InventoryToggle : MonoBehaviour
     [SerializeField] TMP_Text daysText, actionsText;
     [SerializeField] ActionsTracker actionsTracker;
     [SerializeField] DaysTracker daysTracker;
+    [SerializeField] GameObject navCube, spatula, fishOil, dilCrystal, fluxCap;
+    [SerializeField] Invintory inventory;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -33,5 +36,29 @@ public class InventoryToggle : MonoBehaviour
             daysText.text = "Days left: " + daysTracker.getDays();
             actionsText.text = "Actions left: " + actionsTracker.getActions();
         }
+
+        if (inventory.hasNavCube())
+        {
+            navCube.GetComponent<RawImage>().color = Color.white;
+        }
+        if (inventory.hasSpatula())
+        {
+            spatula.GetComponent<RawImage>().color = Color.white;
+        }
+        if (inventory.hasFuel())
+        {
+            fishOil.GetComponent<RawImage>().color = Color.white;
+        }
+        if (inventory.hasDilithiumCrysatl())
+        {
+            dilCrystal.GetComponent<RawImage>().color = Color.white;
+        }
+        if (inventory.hasFluxCapacitor())
+        {
+            fluxCap.GetComponent<RawImage>().color = Color.white;
+        }
+
+
+
     }
 }
