@@ -38,7 +38,7 @@ public class PirateDialog : MonoBehaviour
             objectReceivedScreen.SetActive(true);
             invintory.gainFuelCrysatl();
         }
-        else if (!(invintory.getNumScrapMetal() > 10))
+        else if (!(invintory.getNumScrapMetal() >= 10))
         {
             dialogTriggerNoScrapYet.TriggerDialog();
         }

@@ -105,7 +105,7 @@ public class Invintory : MonoBehaviour
 
     public bool hasAllParts()
     {
-        if (hasFluxCapacitor() && hasDilithiumCrysatl() && hasFuel() && hasNavCube() && hasSpatula())
+        if (hasFluxCapacitor() && hasFuel() && hasNavCube() && hasSpatula())
         {
             return true;
         }
