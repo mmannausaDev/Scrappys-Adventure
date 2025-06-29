@@ -45,8 +45,16 @@ public class DaysTracker : MonoBehaviour
         actionsTracker.startOfDay();
         daysLeft--;
         isDayEnded = true;
+    }
 
-        if(daysLeft <= 0)
+    public int getDays()
+    {
+        return daysLeft;
+    }
+
+    IEnumerator endingDay()
+    {
+        if (daysLeft < 0)
         {
             if (inventory.hasAllParts())
             {
@@ -57,18 +65,13 @@ public class DaysTracker : MonoBehaviour
                 SceneManager.LoadScene("Lose Scene");
             }
         }
-    }
+        else
+        {
 
-    public int getDays()
-    {
-        return daysLeft;
-    }
-
-    IEnumerator endingDay()
-    {
-        dayEndScreen.SetActive(true);
-        //soundFX.Play();
-        yield return new WaitForSeconds(3f);
-        dayEndScreen.SetActive(false);
+            dayEndScreen.SetActive(true);
+            //soundFX.Play();
+            yield return new WaitForSeconds(3f);
+            dayEndScreen.SetActive(false);
+        }
     }
 }

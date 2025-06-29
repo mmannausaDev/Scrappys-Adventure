@@ -7,15 +7,19 @@ public class ArcadeCabinetTrigger : MonoBehaviour
 
     [SerializeField] GameObject dialogCanvas;
     [SerializeField] GameObject mainSceneStuff;
-
+    [SerializeField] Invintory inventory;
+    [SerializeField] GameObject objectReceivedScreen;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && isMouseOver && !dialogCanvas.activeSelf)
+        if (Input.GetMouseButtonDown(0) && isMouseOver && !dialogCanvas.activeSelf && !objectReceivedScreen.activeSelf)
         {
-            SceneManager.LoadScene("Ship minigame", LoadSceneMode.Additive);
-            mainSceneStuff.SetActive(false);
+            if (inventory.hasCoin())
+            {
+                SceneManager.LoadScene("Ship minigame", LoadSceneMode.Additive);
+                mainSceneStuff.SetActive(false);
+            }
         }
     }
 

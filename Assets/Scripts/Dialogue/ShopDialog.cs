@@ -3,6 +3,7 @@ using UnityEngine;
 public class ShopDialog : MonoBehaviour
 {
     [SerializeField] GameObject DialogCanvas;
+    [SerializeField] GameObject objectReceivedScreen;
 
     [SerializeField] DialogTrigger dialogTrigger1, dialogTrigger2, dialogTriggerEndArcade, dialogTriggerShipPart;
 
@@ -27,6 +28,7 @@ public class ShopDialog : MonoBehaviour
         else if (ticketHandler.getTickets() >= 50000 && !gotShipPart)
         {
             gotShipPart = true;
+            objectReceivedScreen.SetActive(true);
             inventory.gainNavCube();
             triggerGetShipPartDialog();
         }
@@ -67,17 +69,29 @@ public class ShopDialog : MonoBehaviour
 
     public void triggerDialogEndArcade()
     {
-        DialogCanvas.SetActive(true);
-        dialogTriggerEndArcade.TriggerDialog();
+        if(ticketHandler.getTickets() >= 50000)
+        {
+            triggerGetShipPartDialog();
+        }
+        else
+        {
+            DialogCanvas.SetActive(true);
+            dialogTriggerEndArcade.TriggerDialog();
+        }
 
         timeToLeave = true;
     }
 
     public void leaveShop()
     {
-        if (!DialogCanvas.activeSelf)
+        if (!DialogCanvas.activeSelf && !objectReceivedScreen.activeSelf)
         {
             clickableTownObj.backtoTown();
         }
+    }
+
+    public void closeInvintoryGet()
+    {
+        objectReceivedScreen.SetActive(false);
     }
 }

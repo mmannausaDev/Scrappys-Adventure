@@ -9,11 +9,12 @@ public class InventoryToggle : MonoBehaviour
     [SerializeField] GameObject inventoryCanvas;
     bool toggle = false;
 
-    [SerializeField] TMP_Text daysText, actionsText;
+    [SerializeField] TMP_Text daysText, actionsText, scrapText, ticketText;
     [SerializeField] ActionsTracker actionsTracker;
     [SerializeField] DaysTracker daysTracker;
     [SerializeField] GameObject navCube, spatula, fishOil, dilCrystal, fluxCap;
     [SerializeField] Invintory inventory;
+    [SerializeField] TicketHandler ticketHandler;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -35,6 +36,9 @@ public class InventoryToggle : MonoBehaviour
 
             daysText.text = "Days left: " + daysTracker.getDays();
             actionsText.text = "Actions left: " + actionsTracker.getActions();
+            ticketText.text = "" + ticketHandler.getTickets();
+            scrapText.text = "" + inventory.getNumScrapMetal();
+
         }
 
         if (inventory.hasNavCube())
