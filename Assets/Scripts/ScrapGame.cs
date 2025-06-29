@@ -15,6 +15,7 @@ public class ScrapGame : MonoBehaviour
     [SerializeField] private GameObject scrapMetal;
     [SerializeField] private GameObject shipPart;
     [SerializeField] private GameObject pitfall;
+    [SerializeField] private GameObject necklace;
 
     //might not be needed 
     //[SerializeField] private Vector2 minGameBoundry;
@@ -97,7 +98,7 @@ public class ScrapGame : MonoBehaviour
         }
 
 
-        cam.transform.position = new Vector3(0, 0, -15);
+        
         spawnedShipPart = false;
         spawnedNecklace = false;
         for (int i = 0; i < spawnedScreensList.Count; i++)
@@ -144,7 +145,7 @@ public class ScrapGame : MonoBehaviour
 
         if (spawnedScreens > 5 && !spawnedNecklace)
         {
-            SpawnObject(shipPart);
+            SpawnObject(necklace);
             spawnedNecklace = true;
         }
 
@@ -166,6 +167,7 @@ public class ScrapGame : MonoBehaviour
     {
         endGameScreen.SetActive(false);
         gameObject.SetActive(false);
+        cam.transform.position = new Vector3(0, 0, -15);
     }
 
 
